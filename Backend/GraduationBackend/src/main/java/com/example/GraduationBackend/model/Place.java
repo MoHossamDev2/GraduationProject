@@ -14,7 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Setter
 @Getter
-@Entity
+@Entity(name = "places")
 public class Place {
 
     @Id
@@ -49,6 +49,10 @@ public class Place {
 
    @OneToMany(mappedBy = "place", cascade = CascadeType.ALL, fetch = FetchType.EAGER ,orphanRemoval = true)
    private List<Image> images;
+
+   @ManyToOne(fetch = FetchType.LAZY)
+   @JoinColumn(name = "owner_id")
+   private User owner ;
 
 
 }

@@ -8,11 +8,12 @@ import lombok.Setter;
 
 import java.sql.Blob;
 
-@Entity
+
 @Setter
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@Entity(name = "images")
 public class Image {
 
     @Id
@@ -35,7 +36,6 @@ public class Image {
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "place_id")
     private Place place ;
-
 
 
 }
