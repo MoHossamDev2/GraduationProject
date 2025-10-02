@@ -1,10 +1,12 @@
 package com.example.GraduationBackend.model;
 
+
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 
 import java.util.List;
 
@@ -15,6 +17,7 @@ import java.util.List;
 @AllArgsConstructor
 @Entity(name = "users")
 public class User {
+
 
     @Id
     @Column(name = "user_id")
