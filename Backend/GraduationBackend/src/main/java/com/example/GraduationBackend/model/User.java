@@ -44,6 +44,9 @@ public class User {
     @JoinColumn(name = "image_id")
     private Image image ;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL ,orphanRemoval = true )
+    private List<Event> events;
+
     @OneToMany(mappedBy = "owner",fetch = FetchType.EAGER,cascade = CascadeType.ALL ,orphanRemoval = true)
     private List<Place> places ;
 }

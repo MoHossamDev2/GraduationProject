@@ -46,6 +46,8 @@ public class Place {
     @Column(name = "place_capacity")
     private Integer capacity ;
 
+    @OneToMany(mappedBy = "place" , cascade = CascadeType.ALL ,orphanRemoval = true)
+    private List<PlaceCategory> placeCategories;
 
    @OneToMany(mappedBy = "place", cascade = CascadeType.ALL, fetch = FetchType.EAGER ,orphanRemoval = true)
    private List<Image> images;
@@ -53,6 +55,9 @@ public class Place {
    @ManyToOne(fetch = FetchType.LAZY)
    @JoinColumn(name = "owner_id")
    private User owner ;
+
+   @OneToMany(mappedBy = "place" , cascade = CascadeType.ALL ,orphanRemoval = true)
+   private List<Event> events;
 
 
 }
