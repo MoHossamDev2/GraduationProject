@@ -32,11 +32,14 @@ public class Event {
     @Column(name = "event_description")
     private String description;
 
+    @Column(name = "booking_date")
+    private Date bookingDate ;
+
     @Column(name = "start_date")
     private Date startDate;
 
     @Column(name = "end")
-    private Date endtDate;
+    private Date endDate;
 
     @Column(name = "event_capacity")
     private Integer capacity ;
